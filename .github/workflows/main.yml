@@ -1,0 +1,29 @@
+name: main
+on:
+    push:
+        branches:
+            - master
+jobs:
+    linux:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v4
+            - name: Install Dependencies
+              run: |
+                apt-get update -y
+                apt-get install cmake build-essential mesa-common-dev -y
+            - name: Compiles to Linux
+              run: |
+                cmake .
+                cmake --build .
+    macos:
+        runs-on: macos-latest
+        steps:
+            - uses: actions/checkout@v4
+            - name: Install Dependencies
+              run: brew update && brew upgrade && brew cleanup --prune=all
+            - name: Compiles to MacOS
+              run: |
+                cmake .
+                cmake --build .
+

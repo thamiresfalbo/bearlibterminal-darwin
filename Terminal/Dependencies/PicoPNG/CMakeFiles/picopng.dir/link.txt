@@ -1,0 +1,2 @@
+/usr/bin/ar qc libpicopng.a CMakeFiles/picopng.dir/Source/PicoPNG.cpp.o
+/usr/bin/ranlib libpicopng.a

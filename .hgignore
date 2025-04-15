@@ -1,6 +1,7 @@
 syntax: regexp
 Build/.*
 Output/[a-zA-Z0-9_.]+
+Output/*
 .settings/.*
 .cproject
 .project
