@@ -16,14 +16,22 @@ jobs:
               run: |
                 cmake .
                 cmake --build .
+            - name: Uploads Artifact
+              uses: actions/upload-artifact@v4
+              with:
+                name: Output
+                path: Output
     macos:
         runs-on: macos-latest
         steps:
             - uses: actions/checkout@v4
-            # - name: Install Dependencies
-            #   run: brew update && brew upgrade && brew cleanup --prune=all
             - name: Compiles to MacOS
               run: |
                 cmake .
                 cmake --build .
+            - name: Uploads Artifact
+              uses: actions/upload-artifact@v4
+              with:
+                name: Output
+                path: Output
 
